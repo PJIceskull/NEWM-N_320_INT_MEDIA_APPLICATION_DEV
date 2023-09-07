@@ -84,3 +84,21 @@ const calcTotal = (subT, tip, callback, taxRate = 0.07) => {
 } 
 
 calcTotal(34.95, 10.50, costTable);
+
+// Callback Challenge
+
+const cb = (h, m, a) => {
+    let mLetter = a[h];
+    let mLetter2 = m[h];
+    document.write(`Middle Letter: ${mLetter} ${mLetter2}`);
+}
+
+const midPosition = (msg, callback) => {
+    let stringLength = msg.length;
+    let half = Math.floor(sl / 2);
+    let sArray = msg.split(""); // sArray for String Array
+
+    callback(half, msg, sArray);
+}
+
+midPosition("Gabriel", cb);
