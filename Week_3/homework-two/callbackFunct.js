@@ -21,7 +21,9 @@ numberPara.innerHTML = "Numbers Chosen: " + num1 + " & " + num2;
 function findAverage(total, num) {
     let mean = total / num; // Get the total divided by the set of numbers
 
+    // Print to console mean
     console.log(mean);
+    // Display Mean value
     averagePara.innerHTML = "Average: " + mean;
 }
 
@@ -42,12 +44,14 @@ function arithmeticFinder(x, y) {
 
     findAverage(totalValue, 2);
 
+    // Print to console each of the values
     console.log(sumAddition);
     console.log(sumSubtract);
     console.log(sumProduct);
     console.log(sumQuotient);
     console.log(totalValue);
 
+    // Display the total value to Paragraph
     totalValuePara.innerHTML = "Total: " + totalValue;
 }
 
