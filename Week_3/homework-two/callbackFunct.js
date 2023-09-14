@@ -22,7 +22,7 @@ function findAverage(total, num) {
     let mean = total / num; // Get the total divided by the set of numbers
 
     // Print to console mean
-    console.log(mean);
+    console.log("Mean / Average: " + mean);
     // Display Mean value
     averagePara.innerHTML = "Average: " + mean;
 }
@@ -42,14 +42,15 @@ function arithmeticFinder(x, y) {
     // Total Value
     let totalValue = sumAddition + sumSubtract + sumProduct + sumQuotient;
 
-    findAverage(totalValue, 2);
-
     // Print to console each of the values
-    console.log(sumAddition);
-    console.log(sumSubtract);
-    console.log(sumProduct);
-    console.log(sumQuotient);
-    console.log(totalValue);
+    console.log("Addition: " + sumAddition);
+    console.log("Subtraction: " + sumSubtract);
+    console.log("Multiplication: " + sumProduct);
+    console.log("Division: " + sumQuotient);
+    console.log("Total Value: " + totalValue);
+
+    // Call callback Function
+    findAverage(totalValue, 2);
 
     // Display the total value to Paragraph
     totalValuePara.innerHTML = "Total: " + totalValue;
