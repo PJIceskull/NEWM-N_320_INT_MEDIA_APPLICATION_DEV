@@ -17,9 +17,17 @@ console.log(paragraphTags);
 // Write numbers to paragraph
 numberPara.innerHTML = "Numbers Chosen: " + num1 + " & " + num2;
 
+// Find Average Function
+function findAverage(total, num) {
+    let mean = total / num; // Get the total divided by the set of numbers
+
+    console.log(mean);
+    averagePara.innerHTML = "Average: " + mean;
+}
+
 // Higer order function
 // parameters: two numeric values, and a callback function
-function arithmeticFinder(x, y, callBackFn) {
+function arithmeticFinder(x, y) {
     // find the arithmetic values of addition, subtraction, multiplication and division of the two numbers
     // Addition
     let sumAddition = x + y;
@@ -32,12 +40,15 @@ function arithmeticFinder(x, y, callBackFn) {
     // Total Value
     let totalValue = sumAddition + sumSubtract + sumProduct + sumQuotient;
 
+    findAverage(totalValue, 2);
 
     console.log(sumAddition);
     console.log(sumSubtract);
     console.log(sumProduct);
     console.log(sumQuotient);
     console.log(totalValue);
+
+    totalValuePara.innerHTML = "Total: " + totalValue;
 }
 
 // Call higer order function.
