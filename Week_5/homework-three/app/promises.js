@@ -16,9 +16,6 @@ async function getQoute() {
 // Function for display text in HTML files
 async function createPara(text) {
   const paraTag = document.createElement("p");
-  paraTag.style.backgroundColor = "lightgray";
-  paraTag.style.borderRadius = "15px";
-  paraTag.style.padding = "10px";
   // Insert Text using parameter & innerText
   paraTag.innerText = text;
   document.querySelector("body").appendChild(paraTag);
@@ -40,11 +37,12 @@ getQoute()
     //   console.log(data.results[i].content);
     // }
 
-    // data.results.forEach(function (value) {
-    //   console.log(value.author);
-    //   //   bodyTag.innerHTML += value.author;
-    //   console.log(value.content);
-    // });
+    data.results.forEach(function (value) {
+      console.log(value.author);
+      // bodyTag.innerHTML += value.author;
+      createPara(value.author);
+      console.log(value.content);
+    });
   })
   .catch((error) => {
     console.log("There was an error");
