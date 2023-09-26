@@ -21,7 +21,7 @@ async function createPara(text) {
   document.querySelector("body").appendChild(paraTag);
 }
 
-createPara("Apples");
+// createPara("Apples");
 
 getQoute()
   .then((data) => {
@@ -39,9 +39,9 @@ getQoute()
 
     data.results.forEach(function (value) {
       console.log(value.author);
-      // bodyTag.innerHTML += value.author;
-      createPara(value.author);
       console.log(value.content);
+      // bodyTag.innerHTML += value.author;
+      createPara(`${value.author} \n ${value.content}`);
     });
   })
   .catch((error) => {
