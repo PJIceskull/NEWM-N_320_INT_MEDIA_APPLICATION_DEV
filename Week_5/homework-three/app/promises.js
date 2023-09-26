@@ -25,19 +25,13 @@ async function createPara(text) {
 
 getQoute()
   .then((data) => {
+    //   Print to console JSON Data
     console.log(data);
-    // document.getElementsByTagName("body");
     // Target body tag
     bodyTag = document.querySelector("body");
-    // document.querySelector("body").innerText = data.results[0].author;
-
-    //   Use loop to print out values
-    // for (i = 0; i < 20; i++) {
-    //   console.log(data.results[i].author);
-    //   console.log(data.results[i].content);
-    // }
 
     data.results.forEach(function (value) {
+      // Test out function using console log
       console.log(value.author);
       console.log(value.content);
       // bodyTag.innerHTML += value.author;
