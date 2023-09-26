@@ -86,4 +86,28 @@ function upperLevel(arr) {
 
 console.log("Class Filter: ", upperLevel(classList));
 
+// Array of objects
+let students = [
+  { first: "Greg", last: "Smith", employed: true },
+  { first: "Sally", last: "Richards" },
+  { first: "Jake", last: "Farmer", employed: true },
+  { first: "Kelsey", last: "Rogers" },
+];
+
+function filterByIndex(arr, key) {
+  return arr.filter(function (value) {
+    return !value[key];
+  });
+}
+console.log("Not Employed: ", filterByIndex(students, "employed"));
+
+let students2 = [
+  { first: "Greg", last: "Smith", employed: true },
+  { first: "Sally", last: "Richards", employed: false },
+  { first: "Jake", last: "Farmer", employed: true },
+  { first: "Kelsey", last: "Rogers", employed: false },
+];
+
+console.log("Not Employed 2: ", filterByIndex(students2, "employed"));
+
 // Map
