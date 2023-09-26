@@ -41,7 +41,7 @@ getQoute()
       console.log(value.author);
       console.log(value.content);
       // bodyTag.innerHTML += value.author;
-      createPara(`${value.author} \n ${value.content}`);
+      createPara(` "${value.content}" \n - ${value.author} \n `);
     });
   })
   .catch((error) => {
