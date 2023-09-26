@@ -76,4 +76,14 @@ console.log("Has Even Number: ", hasEvenNum([11, 21, 31, 43, 55])); // has only 
 
 // Filter
 
+let classList = ["N125", "N220", "N320", "N317", "N423", "N215"];
+
+function upperLevel(arr) {
+  return arr.filter(function (value) {
+    return value.substr(1, 3) >= 300;
+  });
+}
+
+console.log("Class Filter: ", upperLevel(classList));
+
 // Map
