@@ -39,6 +39,7 @@ getQoute()
     });
   })
   .catch((error) => {
-    console.log("There was an error");
+    console.log("Failed to fetch data");
+    bodyTag.innerHTML = "Failed to fetch data";
     console.error();
   });

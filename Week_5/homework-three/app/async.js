@@ -3,7 +3,9 @@ divTag = document.querySelector("div"); // Target the div tag element in the htm
 // divTag.innerHTML = "asdad";
 
 // Set fetch data to a variable
-let dogImageFetch = fetch("https://dog.ceo/api/breeds/image/random/20");
+// let dogImageFetch = fetch("https://dog.ceo/api/breeds/image/random/20");
+// To get Error
+let dogImageFetch = fetch("https://dogs.ceo/api/breeds/image/random/20");
 
 // Function that calls the API
 async function getDogImages() {
@@ -16,6 +18,7 @@ async function getDogImages() {
 
   return results;
 }
+
 // Create async function that takes the fetched data and displays it in the HTML file
 async function createImageTag(imageURL) {
   const imageTag = document.createElement("img");
@@ -41,6 +44,9 @@ getDogImages()
     });
   })
   .catch((error) => {
-    console.log("There was an error");
+    console.log("Failed to fetch data.");
+    //   Display error msg to html
+    divTag.innerHTML = "Failed to fetch data.";
+
     console.error();
   });
