@@ -161,8 +161,24 @@ let family = ["William", "Abigail", "Richie"];
 // Output: My Family members are William Abilgail Richie
 
 let nameFunction = family.reduce(function (accumulator, nextValue) {
-  return (accumulator += "" + nextValue);
-  // return (accumulator = accumulator + "" + nextValue);
+  return (accumulator += " " + nextValue);
+  // return (accumulator = accumulator + " " + nextValue);
 }, "My Family is");
 
 console.log("Name Reduction: " + nameFunction);
+
+// Object Reduction
+let familyMembers = [
+  { first: "Abigail", age: 24 },
+  { first: "William", age: 21 },
+  { first: "Richie", age: 11 },
+];
+
+function extractValue(arr, key) {
+  return arr.reduce(function (accumulator, nextValue) {
+    accumulator.push(nextValue[key]);
+    return accumulator;
+  }, []);
+}
+
+console.log("First Name Array: ", extractValue(familyMembers, "first"));
