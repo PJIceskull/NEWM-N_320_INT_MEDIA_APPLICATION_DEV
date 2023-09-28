@@ -157,7 +157,7 @@ console.log("Reduce Fn 1: ", reduceFn);
 console.log("Reduce Fn 2: ", reduceFn2);
 
 //  Using a string value
-let family = ["William", "Abigail", "Richie"];
+let family = ["William", "Abigail", "Richie", "Ben", "Gabe", "Mike"];
 // Output: My Family members are William Abilgail Richie
 
 let nameFunction = family.reduce(function (accumulator, nextValue) {
@@ -182,3 +182,26 @@ function extractValue(arr, key) {
 }
 
 console.log("First Name Array: ", extractValue(familyMembers, "first"));
+
+// Short / Long Family Names
+// using family array
+function nameLength(value) {
+  return value.length > 3;
+}
+
+function partition(arr, callback) {
+  return arr.reduce(
+    function (accumulator, nextValue) {
+      if (callback(nextValue)) {
+        accumulator[0].push(nextValue);
+      } else {
+        accumulator[1].push(nextValue);
+      }
+
+      return accumulator;
+    },
+    [[], []] // Put mulitple array inside one array to take mulitple value
+  );
+}
+
+console.log(partition(family, nameLength));
