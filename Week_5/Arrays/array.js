@@ -111,3 +111,31 @@ let students2 = [
 console.log("Not Employed 2: ", filterByIndex(students2, "employed"));
 
 // Map
+let mArr = [2, 3, 4, 5, 6];
+
+let mapArray = mArr.map(function (value, index) {
+  return {
+    // Array of Objects
+    key: index,
+    value: value * value,
+  };
+});
+
+console.log("Squared: ", mapArray);
+//  First names only
+function firstNames(arr) {
+  return arr.map(function (value) {
+    return value.first;
+  });
+}
+
+console.log("Only First Names: ", firstNames(students2));
+
+//  Value * Index
+function vtIndex(arr) {
+  return arr.map(function (value, index) {
+    return value * index;
+  });
+}
+
+console.log("Value Time Index: ", vtIndex([2, 5, 9]));
