@@ -19,6 +19,9 @@ async function getDogImages() {
 // Create async function that takes the fetched data and displays it in the HTML file
 async function createImageTag(imageURL) {
   const imageTag = document.createElement("img");
+  // Insert Parameter / Text / url into img src
+  imageTag.src = imageURL;
+  divTag.appendChild(imageTag);
 }
 
 // Call Function
@@ -32,7 +35,9 @@ getDogImages()
     // Test function using console log
     // console.log(data.message);
     data.message.forEach(function (value) {
-      console.log(value);
+      //   console.log(value);
+      // Call createImageTag function
+      createImageTag(value);
     });
   })
   .catch((error) => {
