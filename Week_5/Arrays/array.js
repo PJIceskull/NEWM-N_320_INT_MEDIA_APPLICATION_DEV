@@ -139,3 +139,30 @@ function vtIndex(arr) {
 }
 
 console.log("Value Time Index: ", vtIndex([2, 5, 9]));
+
+// Reduce()
+// Reduce() has two parts: callback & initialValue
+// Callback: accumulator, nextValue
+
+let reduceArr = [1, 2, 3, 4, 5];
+
+let reduceFn = reduceArr.reduce(function (accumulator, nextValue) {
+  return accumulator + nextValue; // Add all the values inside the array + the intitalValue: 10
+}, 10);
+let reduceFn2 = reduceArr.reduce(function (accumulator, nextValue) {
+  return accumulator + nextValue; // Add all the values inside the array
+});
+
+console.log("Reduce Fn 1: ", reduceFn);
+console.log("Reduce Fn 2: ", reduceFn2);
+
+//  Using a string value
+let family = ["William", "Abigail", "Richie"];
+// Output: My Family members are William Abilgail Richie
+
+let nameFunction = family.reduce(function (accumulator, nextValue) {
+  return (accumulator += "" + nextValue);
+  // return (accumulator = accumulator + "" + nextValue);
+}, "My Family is");
+
+console.log("Name Reduction: " + nameFunction);
