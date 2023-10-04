@@ -23,7 +23,7 @@ console.log(studentAvgs);
 // display the name of each student
 students.forEach(function (key) {
   //   console.log(key.name); // Print each student key
-  sLists[0].innerHTML += " " + key.name + " ";
+  sLists[0].innerHTML += `<br/>` + " " + key.name + " ";
 });
 
 // check if all students have passed the class. Students need a 60 or higher to pass
@@ -44,3 +44,5 @@ console.log(students[1].grades);
 // }
 
 // console.log(hasPassed());
+
+// Use the some method to check if at least one student has achieved a perfect score in the class. (All grades are 100.)
