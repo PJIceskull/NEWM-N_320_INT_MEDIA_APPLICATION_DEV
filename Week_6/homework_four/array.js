@@ -29,8 +29,8 @@ students.forEach(function (key) {
 // Using the "every()" method
 //// check if all students have passed the class. Students need a 60 or higher to pass
 // Print to console the student's grade
-console.log(students[1]);
-console.log(students[1].grades);
+// console.log(students[1]);
+// console.log(students[1].grades);
 
 let hasPassed = students.every(function (value) {
   return value > 60;
@@ -40,3 +40,28 @@ pTags[1].innerText += " " + hasPassed; // Display result into HTML file
 
 // Using the some() method
 //// Check if at least one student has achieved a perfect score in the class. (All grades are 100.)
+let hasPerfect = students.some(function (value) {
+  console.log(value.grades);
+  return value.grades == 100;
+});
+console.log(hasPerfect);
+pTags[2].innerText += " " + hasPerfect;
+
+// function hasPerfectScore(arr) {
+//   return arr.some(function (value) {
+//     console.log(value.grades);
+//     value.grades.some(function (value) {
+//       return value == 100;
+//     });
+//   });
+// }
+
+// console.log(hasPerfectScore(students));
+
+// Filter()
+//Use the filter() method to create the result of all the students with the average grade of 90 or higher
+
+// Use the map method to create a new array called studentSummaries
+// Name: [student name] , Average Grade: [average grade]
+
+// Use the reduce method to calculate the total number of grades across all students
