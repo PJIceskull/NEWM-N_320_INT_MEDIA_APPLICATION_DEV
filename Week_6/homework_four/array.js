@@ -26,23 +26,17 @@ students.forEach(function (key) {
   sLists[0].innerHTML += `<br/>` + " " + key.name + " ";
 });
 
-// check if all students have passed the class. Students need a 60 or higher to pass
-
+// Using the "every()" method
+//// check if all students have passed the class. Students need a 60 or higher to pass
+// Print to console the student's grade
 console.log(students[1]);
 console.log(students[1].grades);
 
-// function hasPassed() {
-//   students.forEach(function (key) {
-//     console.log(key.grades);
-//     key.grades.forEach(function (value) {
-//       if (value > 60) {
-//         console.log(value);
-//         return key.name;
-//       }
-//     });
-//   });
-// }
+let hasPassed = students.every(function (value) {
+  return value > 60;
+});
+console.log("Has Every student passed the class? ", hasPassed);
+pTags[1].innerText += " " + hasPassed; // Display result into HTML file
 
-// console.log(hasPassed());
-
-// Use the some method to check if at least one student has achieved a perfect score in the class. (All grades are 100.)
+// Using the some() method
+//// Check if at least one student has achieved a perfect score in the class. (All grades are 100.)
