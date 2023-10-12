@@ -13,7 +13,11 @@
     <section id="myGoals">
       <p>{{courseGoal1}}</p>
       <p>{{courseGoal2}}</p>
-      <p></p>
+      <!-- <p><a href="{{vueLink}}" target="_blank">Vue Website </a></p> -->
+      <p><a v-bind:href="vueLink" target="_blank">Vue Resource</a></p>
+      <p>My goal: {{1 + 1}}</p>
+      <p v-html="courseGoal3"></p>
+      <p>New Goal: {{newGoal()}}</p>
     </section>
     <!-- Link to Javascript File -->
     <script src="app.js"></script>
