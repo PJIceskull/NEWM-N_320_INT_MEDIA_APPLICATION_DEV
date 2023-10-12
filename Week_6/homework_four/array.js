@@ -42,7 +42,7 @@ pTags[1].innerText += " " + hasPassed; // Display result into HTML file
 //// Check if at least one student has achieved a perfect score in the class. (All grades are 100.)
 let hasPerfect = students.some(function (value) {
   console.log(value.grades);
-  return value.grades == 100;
+  return value.grades == 100; // Return False?
 });
 console.log(hasPerfect);
 pTags[2].innerText += " " + hasPerfect;
@@ -60,6 +60,10 @@ pTags[2].innerText += " " + hasPerfect;
 
 // Filter()
 //Use the filter() method to create the result of all the students with the average grade of 90 or higher
+
+let averageGrade = students.filter(function () {});
+
+console.log();
 
 // Use the map method to create a new array called studentSummaries
 // Name: [student name] , Average Grade: [average grade]
