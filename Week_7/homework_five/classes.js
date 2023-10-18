@@ -22,6 +22,8 @@ class itemTypeInfo {
 class Book extends itemTypeInfo {
   constructor(id, title, author, genre, publishYear, value) {
     super(id, title, publishYear, value);
+    this.author = author;
+    this.genre = genre;
   }
 }
 // DVD
@@ -29,6 +31,8 @@ class Book extends itemTypeInfo {
 class DVD extends itemTypeInfo {
   constructor(id, title, director, runtime, publishYear, value) {
     super(id, title, publishYear, value);
+    this.director = director;
+    this.runtime = runtime;
   }
 }
 // CD
@@ -36,5 +40,40 @@ class DVD extends itemTypeInfo {
 class CD extends itemTypeInfo {
   constructor(id, title, artist, songs, publishYear, value) {
     super(id, title, publishYear, value);
+    this.artist = artist;
+    this.songs = songs;
+  }
+}
+
+// Create a class that includes the following methods:
+// constructor()
+// addItem()
+// removeItem()
+// totalValue()
+// displayCatalog()
+class catalogData extends itemTypeInfo {
+  // constructor:  empty catalog
+  constructor(id, title, publishYear, value) {
+    super(id, title, publishYear, value);
+  }
+  // addItem:
+  addItem() {
+    // add one or more items
+  }
+  // removeItem
+  removeItem() {
+    // remove item from the catalog by its id.
+  }
+  // totalValue
+  totalValue() {
+    //  calculate and return the total value of all the catalog items.
+  }
+  // displayCatalog
+  displayCatalog() {
+    // display the items in the catalog, including
+    // the titles(italicized)
+    // publication data
+    // value
+    // additional properties specific to the media type.
   }
 }
