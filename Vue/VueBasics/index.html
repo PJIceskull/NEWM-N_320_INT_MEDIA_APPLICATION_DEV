@@ -14,10 +14,34 @@
       <p>{{courseGoal1}}</p>
       <p>{{courseGoal2}}</p>
       <!-- <p><a href="{{vueLink}}" target="_blank">Vue Website </a></p> -->
+      <!-- ":" = shortcut for v-on -->
       <p><a v-bind:href="vueLink" target="_blank">Vue Resource</a></p>
       <p>My goal: {{1 + 1}}</p>
       <p v-html="courseGoal3"></p>
       <p>New Goal: {{newGoal()}}</p>
+
+      <!-- Counter -->
+      <button v-on:click="add()">Add</button>
+      <button v-on:click="addMore(5)">Add By 5</button>
+      <button v-on:click="subtract()">Remove</button>
+      <p>Count: {{counter}}</p>
+
+      <!-- Name -->
+      <input type="text" v-model="name" />
+      <p>{{ name }}</p>
+      <p>{{ fullName }}</p>
+      <p>Name Length: {{nameData[0]}}</p>
+      <p>Middle Character: {{nameData[1]}}</p>
+
+      <button v-on:click="resetName">Reset Name</button>
+      <!-- "@" = shortcut for v-on -->
+      <button @click="resetName">Reset Name</button>
+
+      <!-- Form -->
+      <form v-on:submit.prevent="submitForm">
+        <input v-on:keyup.space="consoleMe" type="text" />
+        <button>Sign Up</button>
+      </form>
     </section>
     <!-- Link to Javascript File -->
     <script src="app.js"></script>

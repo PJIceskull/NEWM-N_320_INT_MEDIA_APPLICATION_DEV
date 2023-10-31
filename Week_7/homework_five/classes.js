@@ -52,7 +52,7 @@ class CD extends itemTypeInfo {
 // totalValue()
 // displayCatalog()
 class catalogData extends itemTypeInfo {
-  // constructor:  empty catalog
+  // constructor: create an empty catalog
   constructor(id, title, publishYear, value) {
     super(id, title, publishYear, value);
   }
@@ -66,7 +66,7 @@ class catalogData extends itemTypeInfo {
   }
   // totalValue
   totalValue() {
-    //  calculate and return the total value of all the catalog items.
+    // calculate and return the total value of all the catalog items.
   }
   // displayCatalog
   displayCatalog() {
