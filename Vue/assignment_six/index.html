@@ -8,7 +8,18 @@
   </head>
   <body>
     <!-- Main Vue container -->
-    <article></article>
+    <article>
+      <!-- Display "Name" -->
+      <h1 style="font-size: 32px">{{Name}}</h1>
+      <!-- Display "Course" + "Assignment" -->
+      <h2>{{Course}}: {{AssignmentName}}</h2>
+      <!-- Display "Due Date" -->
+      <h3>Due Date: {{DueDate()}}</h3>
+      <!-- Difficulty rating out of 5-->
+      <h4>Difficulty Level: {{Difficulty}} / 5</h4>
+
+      <hr />
+    </article>
 
     <!-- Link to Javascript files -->
     <script src="app.js"></script>
