@@ -22,7 +22,7 @@ const vueMount = Vue.createApp({
 });
 
 // "My List" component
-vueMount.component("myList", {
+vueMount.component("mylist", {
   template: `<h1>Bird List</h1>`,
   data() {
     // Create an array of 7 items or more
