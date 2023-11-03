@@ -22,16 +22,8 @@ const vueMount = Vue.createApp({
 });
 
 // "My List" component
-vueMount.component("My-List", {
-  template: `<ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>`,
+vueMount.component("myList", {
+  template: `<h1>Bird List</h1>`,
   data() {
     // Create an array of 7 items or more
     return {
@@ -49,17 +41,16 @@ vueMount.component("My-List", {
     };
   },
   methods: {
-    displayItems(arr) {
-      // Target ul tag
-      let ulTag = document.getElementsByTagName("ul");
-      let liTags = document.getElementsByTagName("li");
-      arr.forEach(function (i) {
-        document.createElement("li"); // create li tag
-
-        liTags[i].innerText = "text";
-        liTags[i].appendChild();
-      });
-    },
+    // displayItems(arr) {
+    //   // Target ul tag
+    //   let ulTag = document.getElementsByTagName("ul");
+    //   let liTags = document.getElementsByTagName("li");
+    //   arr.forEach(function (i) {
+    //     document.createElement("li"); // create li tag
+    //     liTags[i].innerText = "text";
+    //     liTags[i].appendChild();
+    //   });
+    // },
   },
 });
 

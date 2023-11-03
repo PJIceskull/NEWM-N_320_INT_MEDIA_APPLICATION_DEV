@@ -1,25 +1,14 @@
 <template>
-  <div>
-    <header>
-      <h2>Shopping List</h2>
-    </header>
-    <input type="text" />
-    <button>Add Item</button>
-  </div>
+  <h2>My Shopping List App</h2>
+  <shopping-list></shopping-list>
 </template>
 
 <!-- JS Script code -->
-<script src="">
-export default {
-  data() {
-    return {
-      inputValue: '',
-      shoppingList: []
-    }
-  },
-  methods: {}
-}
-</script>
+<script src=""></script>
 
 <!-- CSS styles -->
-<style></style>
+<style>
+h2 {
+  color: blue;
+}
+</style>

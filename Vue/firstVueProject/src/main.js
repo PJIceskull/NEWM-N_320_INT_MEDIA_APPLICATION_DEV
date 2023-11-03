@@ -1,4 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import ShoppingList from './components/ShoppingList.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.component('shopping-list', ShoppingList)
+
+app.mount('#app')
