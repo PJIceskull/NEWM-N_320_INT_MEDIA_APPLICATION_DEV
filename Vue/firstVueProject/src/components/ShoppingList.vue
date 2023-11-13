@@ -8,8 +8,13 @@
     <!-- <p>{{ inputValue }}</p> -->
 
     <ul>
-      <li v-for="(item, i) in shoppingList" v-bind.key="i">{{ item }}</li>
+      <li v-for="(item, i) in shoppingList" v-bind:key="i">
+        {{ item }}
+        <button @click="deleteItem(i)">Delete</button>
+        <button @click="editItem(i)">edit</button>
+      </li>
     </ul>
+    <button @click="deleteItem(-1)">Delete All</button>
   </div>
 </template>
 
@@ -37,6 +42,17 @@ export default {
 
       // Bring focus to input for next addition
       this.$refs.inputValue.focus()
+    },
+    deleteItem(i) {
+      this.shoppingList = i + 1 ? this.shoppingList.filter((item, x) => x !== i) : []
+    },
+    editItem(i) {
+      this.shoppingList.forEach(function (item, k) {
+        if (i == k) {
+          let newValue = prompt(`Current Value: ${item}`)
+          this.shoppingList.splice(k, 1, newValue)
+        }
+      })
     }
   }
 }
