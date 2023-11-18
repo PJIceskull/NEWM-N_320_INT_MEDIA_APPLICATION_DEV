@@ -2,6 +2,8 @@
   <h1>Student Data</h1>
   <div>
     <h2>{{ sName }}</h2>
+    <!-- Check enrollment -->
+    <p>{{ isEnrolled }}</p>
     <!-- Toggle Button -->
     <button @click="toggleDetails">
       {{
@@ -11,10 +13,11 @@
       }}
       Details
     </button>
+    <button @click="toggleEnrollment(sName)">Toggle Enrollment</button>
     <!-- Container for Sudent Info -->
     <div v-if="visibleData">
       <h2>Student Details</h2>
-      <p>Age {{ sAge }}</p>
+      <p>Age: {{ sAge }}</p>
       <p>Major: {{ major }}</p>
       <p v-if="cLevel">Class Rank: {{ cLevel }}</p>
       <p v-if="graduate">Graduate</p>
@@ -51,13 +54,17 @@ export default {
         return value > 0 && value <= 4
       }
     },
-    graduate: Boolean // Must be a boolean value
+    graduate: Boolean, // Must be a boolean value
+    isEnrolled: Boolean
   },
   methods: {
     toggleDetails() {
       this.visibleData = !this.visibleData
       // If True set = to False / Not True
       // If False set = to True / Not False
+    },
+    toggleEnrollment(value) {
+      this.$emit('toggle-enrollment', value)
     }
   }
 }
