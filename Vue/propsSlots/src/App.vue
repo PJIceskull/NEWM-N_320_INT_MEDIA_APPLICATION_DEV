@@ -1,7 +1,21 @@
 <!-- Styles -->
-<style scoped></style>
+<style scoped>
+a-router-link-active {
+  background-color: blue;
+  color: red;
+  padding: 10px;
+}
+</style>
 
 <template>
+  <navigation-header></navigation-header>
+  <RouterView
+    :greeting="greeting"
+    :who="who"
+    :count="count"
+    :myVue="myVue"
+    :book="book"
+  ></RouterView>
   <h1>Props and Slots</h1>
   <div>
     <div>
@@ -48,7 +62,11 @@
 
 <!-- Script -->
 <script>
+import NavigationHeader from './components/NavigationHeader.vue'
 export default {
+  components: {
+    NavigationHeader
+  },
   data() {
     return {
       greeting: 'hello',
@@ -59,6 +77,12 @@ export default {
         id: 1,
         title: 'Vue 3 Development'
       },
+      // project: {
+      //   type: 'final',
+      //   title: 'Conference Sessions Application',
+      //   dueDate: '12/08/2023',
+      //   points: 150
+      // },
       students: [
         {
           sName: 'Robert Smith', // Name
@@ -109,6 +133,14 @@ export default {
 
       currentStudent.isEnrolled = !currentStudent.isEnrolled
       // this.isEnrolled = !this.isEnrolled
+    }
+  },
+  provide: {
+    project: {
+      type: 'Final',
+      title: 'Conference Sessions Application',
+      dueDate: '12/08/2023',
+      points: 150
     }
   }
 }
