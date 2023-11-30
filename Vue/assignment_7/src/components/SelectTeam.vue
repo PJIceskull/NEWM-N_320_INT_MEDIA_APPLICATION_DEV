@@ -5,7 +5,10 @@ form {
   padding: 15px;
   /* box-shadow: ; */
 }
-button {
+form div {
+  margin-bottom: 15px;
+}
+.submit {
   background-color: hsl(9, 100%, 64%);
   padding: 10px;
   width: 100px;
@@ -14,10 +17,11 @@ button {
   color: snow;
   cursor: pointer;
 }
-button:hover {
+.submit:hover {
   background-color: hsl(9, 100%, 32%);
+  transition: 0.25s;
 }
-button:active {
+.submit:active {
   background-color: snow;
   color: hsl(9, 100%, 32%);
   border: 2px solid hsl(9, 100%, 32%);
@@ -29,21 +33,23 @@ button:active {
   <!-- Form -->
   <form action="">
     <!-- Input Team Name -->
-    <label>Team Name: </label>
-    <input type="text" v-model="userTeamName" />
-    <br />
+    <div>
+      <label>Team Name: </label>
+      <input type="text" v-model="userTeamName" />
+    </div>
 
     <!-- Team Role -->
-    <label>Role: </label>
-    <select v-model="selectedRole">
-      <option value="1">Developer</option>
-      <option value="2">Designer</option>
-      <option value="3">UI/UX</option>
-    </select>
-    <br />
+    <div>
+      <label>Role: </label>
+      <select v-model="selectedRole">
+        <option value="1">Developer</option>
+        <option value="2">Designer</option>
+        <option value="3">UI/UX</option>
+      </select>
+    </div>
 
     <!-- Submit -->
-    <button>Submit</button>
+    <button class="submit">Submit</button>
   </form>
 </template>
 

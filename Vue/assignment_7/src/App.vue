@@ -1,7 +1,7 @@
 <style scoped></style>
 
 <template>
-  <h1>Assignment 7</h1>
+  <h1>Member Selection</h1>
 
   <!-- Form -->
   <div>
