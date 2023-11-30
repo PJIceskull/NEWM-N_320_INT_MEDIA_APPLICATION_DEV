@@ -5,7 +5,7 @@
 
   <!-- Form -->
   <div>
-    <select-team></select-team>
+    <select-team @select-team="addTeamName"></select-team>
   </div>
   <!-- Team Data -->
   <div>
@@ -17,6 +17,7 @@
       :phone="member.phone"
       :email="member.email"
       :role="member.role"
+      :team="member.team"
     ></team-data>
   </div>
 </template>
@@ -123,6 +124,15 @@ export default {
           team: ''
         }
       ]
+    }
+  },
+  methods: {
+    addTeamName(team) {
+      //
+      const newTeamName = {
+        team: team
+      }
+      console.log(newTeamName.team)
     }
   }
 }

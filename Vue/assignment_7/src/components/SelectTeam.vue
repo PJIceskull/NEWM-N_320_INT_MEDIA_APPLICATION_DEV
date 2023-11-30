@@ -31,7 +31,7 @@ form div {
 <template>
   <h2>Select Teams</h2>
   <!-- Form -->
-  <form action="">
+  <form @submit.prevent="submitData">
     <!-- Input Team Name -->
     <div>
       <label>Team Name: </label>
@@ -49,7 +49,7 @@ form div {
     </div>
 
     <!-- Submit -->
-    <button class="submit">Submit</button>
+    <button class="submit" @click="$emit('select-team')">Submit</button>
   </form>
 </template>
 
@@ -58,8 +58,18 @@ export default {
   data() {
     return {
       // Target Input Values
-      userTeamName: '',
-      selectedRole: ''
+      teamMemberName: '',
+      selectedRole: '',
+      userTeamName: ''
+    }
+  },
+  emits: ['select-team'],
+  methods: {
+    submitData() {
+      //
+      console.log(this.userTeamName)
+      // Emits
+      this.$emit('select-team', this.userTeamName)
     }
   }
 }
