@@ -18,6 +18,7 @@
       :email="member.email"
       :role="member.role"
       :team="member.team"
+      :userTeamName="userTeamName"
     ></team-data>
   </div>
 </template>
@@ -26,6 +27,8 @@
 export default {
   data() {
     return {
+      // Set userTeamName to ""
+      userTeamName: '',
       members: [
         {
           id: 1,
@@ -128,11 +131,9 @@ export default {
   },
   methods: {
     addTeamName(team) {
-      //
-      const newTeamName = {
-        team: team
-      }
-      console.log(newTeamName.team)
+      // Assign User input Value into "team"
+      this.userTeamName = team
+      console.log('New Team Name:', this.userTeamName)
     }
   }
 }

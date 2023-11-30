@@ -67,7 +67,7 @@ export default {
   methods: {
     submitData() {
       //
-      console.log(this.userTeamName)
+      console.log('User Input: ', this.userTeamName)
       // Emits
       this.$emit('select-team', this.userTeamName)
     }

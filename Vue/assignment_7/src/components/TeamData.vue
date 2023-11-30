@@ -17,13 +17,14 @@
 }
 .joinBTN {
   background-color: hsl(9, 100%, 64%);
-  padding: 7.5px;
-  width: 100px;
+  padding: 7.5px 10px;
+  min-width: 100px;
   border: 2px solid snow;
   border-radius: 15px;
   color: snow;
   cursor: pointer;
   font-size: 18px;
+  text-transform: capitalize;
 }
 .joinBTN:hover {
   background-color: hsl(9, 100%, 32%);
@@ -60,7 +61,7 @@
       <!-- Name -->
       <h2>{{ name }}</h2>
       <!-- Join Button -->
-      <button class="joinBTN">Join {{ team }}</button>
+      <button class="joinBTN">Join {{ userTeamName }}</button>
     </div>
 
     <hr />
@@ -105,7 +106,7 @@ export default {
       visibleData: false
     }
   },
-  props: ['name', 'phone', 'email', 'role', 'team'],
+  props: ['name', 'phone', 'email', 'role', 'team', 'userTeamName'],
   methods: {
     toggleDetails() {
       this.visibleData = !this.visibleData
