@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="submitData">
-    <label for="">Name: </label>
+    <label>Name: </label>
     <input type="text" v-model="enteredName" />
     <br />
 
@@ -15,7 +15,7 @@
     <br />
 
     <!-- Class Rank -->
-    <label for="">Class Rank: </label>
+    <label>Class Rank: </label>
     <select v-model="enteredClass">
       <option value="1">Freshman</option>
       <option value="2">Sophomore</option>
@@ -25,9 +25,9 @@
     <br />
 
     <!-- Graduate -->
-    <label for="">Graduate: </label>
+    <label>Graduate: </label>
     <input type="checkbox" v-model="enteredGrad" name="graduate" value="true" />
-    <button>Add Student</button>
+    <button @click="$emit('add-student')">Add Student</button>
   </form>
 </template>
 

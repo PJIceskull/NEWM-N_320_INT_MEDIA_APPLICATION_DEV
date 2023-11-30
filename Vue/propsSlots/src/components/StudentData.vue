@@ -35,25 +35,28 @@ export default {
       visibleData: false
     }
   },
+  emits: ['toggle-enrollment'],
   //   props: ['sName', 'sAge', 'major', 'cLevel', 'graduate']
   props: {
     sName: String, // Required
     sAge: Number, // Not // Required
-    major: {
-      // Required
-      type: String,
-      required: true
-    },
-    cLevel: {
-      // Required
-      // but if they have it, it has to match it
-      type: Number,
-      validator: function (value) {
-        // Validate Info
-        // must between 1 & 4
-        return value > 0 && value <= 4
-      }
-    },
+    major: String,
+    cLevel: Number,
+    // major: {
+    //   // Required
+    //   type: String,
+    //   required: true
+    // },
+    // cLevel: {
+    //   // Required
+    //   // but if they have it, it has to match it
+    //   type: Number,
+    //   validator: function (value) {
+    //     // Validate Info
+    //     // must between 1 & 4
+    //     return value > 0 && value <= 4
+    //   }
+    // },
     graduate: Boolean, // Must be a boolean value
     isEnrolled: Boolean
   },
