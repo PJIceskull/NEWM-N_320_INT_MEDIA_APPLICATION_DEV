@@ -8,7 +8,31 @@
 }
 .card h2 {
   color: tomato;
-  margin-bottom: 0;
+  margin: 0;
+}
+.memberTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.joinBTN {
+  background-color: hsl(9, 100%, 64%);
+  padding: 7.5px;
+  width: 100px;
+  border: 2px solid snow;
+  border-radius: 15px;
+  color: snow;
+  cursor: pointer;
+  font-size: 18px;
+}
+.joinBTN:hover {
+  background-color: hsl(9, 100%, 32%);
+  transition: 0.25s;
+}
+.joinBTN:active {
+  background-color: snow;
+  color: hsl(9, 100%, 32%);
+  border: 2px solid hsl(9, 100%, 32%);
 }
 .card hr {
   /* height: 5px; */
@@ -32,8 +56,13 @@
 <template>
   <!-- Team Member Card -->
   <section class="card">
-    <!-- Name -->
-    <h2>{{ name }}</h2>
+    <div class="memberTitle">
+      <!-- Name -->
+      <h2>{{ name }}</h2>
+      <!-- Join Button -->
+      <button class="joinBTN">Join {{ team }}</button>
+    </div>
+
     <hr />
 
     <!-- Role -->
@@ -57,6 +86,13 @@
       <li><strong>Phone:</strong> {{ phone }}</li>
       <!-- Email -->
       <li><strong>Email:</strong> {{ email }}</li>
+      <!-- Team -->
+      <li>
+        <strong
+          >Team:
+          <span style="color: tomato">{{ team }}</span>
+        </strong>
+      </li>
     </ul>
   </section>
 </template>
@@ -69,7 +105,7 @@ export default {
       visibleData: false
     }
   },
-  props: ['name', 'phone', 'email', 'role'],
+  props: ['name', 'phone', 'email', 'role', 'team'],
   methods: {
     toggleDetails() {
       this.visibleData = !this.visibleData
