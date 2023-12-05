@@ -13,13 +13,14 @@
     <team-data
       v-for="member in members"
       :key="member.name"
+      :id="member.id"
       :name="member.name"
       :phone="member.phone"
       :email="member.email"
       :role="member.role"
       :team="member.team"
       :userTeamName="userTeamName"
-      @team-data="addToTeam"
+      @addToTeam="addToTeam"
     ></team-data>
   </div>
 </template>
@@ -136,9 +137,18 @@ export default {
       this.userTeamName = team
       console.log('New Team Name:', this.userTeamName)
     },
-    addToTeam() {
-      this.userTeamName = this.members.team
-      console.log('Add To Team')
+    addToTeam(value, teamName, idNum) {
+      idNum = idNum - 1
+      // Print to console the Team Name
+      console.log('Add To Team: ', value)
+      console.log(idNum)
+
+      console.log('Team Name: ', teamName)
+      teamName = value
+      console.log('Team Name: ', value)
+
+      console.log(this.members[idNum].name)
+      this.members[idNum].team = value
     }
   }
 }
