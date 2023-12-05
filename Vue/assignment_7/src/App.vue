@@ -128,7 +128,8 @@ export default {
           role: 'Designer',
           team: ''
         }
-      ]
+      ],
+      newTeamMember: []
     }
   },
   methods: {
@@ -137,8 +138,16 @@ export default {
       this.userTeamName = team
       console.log('New Team Name:', this.userTeamName)
     },
-    addToTeam(value, teamName, idNum) {
-      idNum = idNum - 1
+    addToTeam(value, teamName, idNum, mName, mPhone, mEmail, mRole) {
+      const newMember = {
+        id: idNum,
+        name: mName,
+        phone: mPhone,
+        email: mEmail,
+        role: mRole,
+        team: value
+      }
+      // idNum = idNum - 1
       // Print to console the Team Name
       console.log('Add To Team: ', value)
       console.log(idNum)
@@ -147,8 +156,12 @@ export default {
       teamName = value
       console.log('Team Name: ', value)
 
-      console.log(this.members[idNum].name)
-      this.members[idNum].team = value
+      console.log(this.members[idNum - 1].name)
+      this.members[idNum - 1].team = value
+      // Push Member to New Team
+      this.newTeamMember.push(newMember)
+      console.log(newMember)
+      console.log(this.newTeamMember)
     }
   }
 }

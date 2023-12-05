@@ -61,7 +61,7 @@
       <!-- Name -->
       <h2>{{ name }}</h2>
       <!-- Join Button -->
-      <button class="joinBTN" @click="addToTeam(userTeamName, team, id)">
+      <button class="joinBTN" @click="addToTeam(userTeamName, team, id, name, phone, email, role)">
         Join {{ userTeamName }}
       </button>
     </div>
@@ -118,8 +118,8 @@ export default {
       // If True set = to False / Not True
       // If False set = to True / Not False
     },
-    addToTeam(value, teamName, idNum) {
-      this.$emit('addToTeam', value, teamName, idNum)
+    addToTeam(value, teamName, idNum, mName, mPhone, mEmail, mRole) {
+      this.$emit('addToTeam', value, teamName, idNum, mName, mPhone, mEmail, mRole)
     }
   }
 }
