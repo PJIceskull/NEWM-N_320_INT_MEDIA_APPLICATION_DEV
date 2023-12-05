@@ -1,6 +1,21 @@
 <style scoped></style>
 
 <template>
+  <header>
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+
+    <div class="wrapper">
+      <HelloWorld msg="You did it!" />
+
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+      </nav>
+    </div>
+  </header>
+
+  <RouterView />
+
   <h1>Member Selection</h1>
 
   <!-- Form -->
@@ -25,7 +40,10 @@
 </template>
 
 <script>
+// import { RouterLink, RouterView } from 'vue-router'
+
 export default {
+  components: {},
   data() {
     return {
       // Set userTeamName to ""
