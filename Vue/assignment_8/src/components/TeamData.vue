@@ -61,7 +61,9 @@
       <!-- Name -->
       <h2>{{ name }}</h2>
       <!-- Join Button -->
-      <button class="joinBTN" @click="$emit('team-data')">Join {{ userTeamName }}</button>
+      <button class="joinBTN" @click="addToTeam(userTeamName, team, id, name, phone, email, role)">
+        Join {{ userTeamName }}
+      </button>
     </div>
 
     <hr />
@@ -103,16 +105,21 @@ export default {
   data() {
     return {
       // Visible Data
-      visibleData: false
+      visibleData: false,
+      // Team inputed by User
+      enteredTeamName: ''
     }
   },
-  props: ['name', 'phone', 'email', 'role', 'team', 'userTeamName'],
-  emit: ['team-data'],
+  props: ['id', 'name', 'phone', 'email', 'role', 'team', 'userTeamName'],
+  emit: ['team-data', 'addToTeam'],
   methods: {
     toggleDetails() {
       this.visibleData = !this.visibleData
       // If True set = to False / Not True
       // If False set = to True / Not False
+    },
+    addToTeam(value, teamName, idNum, mName, mPhone, mEmail, mRole) {
+      this.$emit('addToTeam', value, teamName, idNum, mName, mPhone, mEmail, mRole)
     }
   }
 }

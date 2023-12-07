@@ -2,19 +2,13 @@
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <nav-header></nav-header>
     </div>
   </header>
 
-  <RouterView />
+  <!-- <RouterView /> -->
+  <RouterView @select-team="addTeamName"></RouterView>
 
   <h1>Member Selection</h1>
 
@@ -28,22 +22,24 @@
     <team-data
       v-for="member in members"
       :key="member.name"
+      :id="member.id"
       :name="member.name"
       :phone="member.phone"
       :email="member.email"
       :role="member.role"
       :team="member.team"
       :userTeamName="userTeamName"
-      @team-data="addToTeam"
+      @addToTeam="addToTeam"
     ></team-data>
   </div>
 </template>
 
 <script>
-// import { RouterLink, RouterView } from 'vue-router'
-
+import navHeader from './components/navHeader.vue'
 export default {
-  components: {},
+  components: {
+    navHeader
+  },
   data() {
     return {
       // Set userTeamName to ""
@@ -145,7 +141,8 @@ export default {
           role: 'Designer',
           team: ''
         }
-      ]
+      ],
+      newTeamMember: []
     }
   },
   methods: {
@@ -154,9 +151,30 @@ export default {
       this.userTeamName = team
       console.log('New Team Name:', this.userTeamName)
     },
-    addToTeam() {
-      this.userTeamName = this.members.team
-      console.log('Add To Team')
+    addToTeam(value, teamName, idNum, mName, mPhone, mEmail, mRole) {
+      const newMember = {
+        id: idNum,
+        name: mName,
+        phone: mPhone,
+        email: mEmail,
+        role: mRole,
+        team: value
+      }
+      // idNum = idNum - 1
+      // Print to console the Team Name
+      console.log('Add To Team: ', value)
+      console.log(idNum)
+
+      console.log('Team Name: ', teamName)
+      teamName = value
+      console.log('Team Name: ', value)
+
+      console.log(this.members[idNum - 1].name)
+      this.members[idNum - 1].team = value
+      // Push Member to New Team
+      this.newTeamMember.push(newMember)
+      console.log(newMember)
+      console.log(this.newTeamMember)
     }
   }
 }
