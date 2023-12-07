@@ -8,8 +8,7 @@
   </header>
 
   <!-- <RouterView /> -->
-  <!-- <RouterView @select-team="addTeamName"></RouterView> -->
-  <RouterView @select-team="addTeamName"></RouterView>
+  <RouterView @select-team="addTeamName" :members="members" @team-data="addToTeam"></RouterView>
 
   <h1>Member Selection</h1>
 
@@ -45,6 +44,7 @@ export default {
     return {
       // Set userTeamName to ""
       userTeamName: '',
+      teamNameList: [],
       members: [
         {
           id: 1,
@@ -148,9 +148,14 @@ export default {
   },
   methods: {
     addTeamName(team) {
+      let currentTeamName = this.teamNameList.includes(team) // Check if team name exists
       // Assign User input Value into "team"
       this.userTeamName = team
-      console.log('New Team Name:', this.userTeamName)
+      if (!currentTeamName) {
+        this.teamNameList.push(team)
+        console.log('Team List', this.teamNameList)
+      }
+      // console.log('New Team Name:', this.userTeamName)
     },
     addToTeam(value, teamName, idNum, mName, mPhone, mEmail, mRole) {
       const newMember = {
