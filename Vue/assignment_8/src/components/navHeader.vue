@@ -24,7 +24,7 @@ a:active {
   background-color: snow;
   color: hsl(9, 100%, 32%);
   font-weight: bold;
-  border: 1px solid hsl(9, 100%, 32%);
+  border: 2px solid hsl(9, 100%, 32%);
   transition: 0.05s;
 }
 </style>

@@ -8,14 +8,15 @@
   </header>
 
   <!-- <RouterView /> -->
+  <!-- <RouterView @select-team="addTeamName"></RouterView> -->
   <RouterView @select-team="addTeamName"></RouterView>
 
   <h1>Member Selection</h1>
 
   <!-- Form -->
-  <div>
+  <!-- <div>
     <select-team @select-team="addTeamName"></select-team>
-  </div>
+  </div> -->
   <!-- Team Data -->
   <div>
     <h2>Team Data</h2>

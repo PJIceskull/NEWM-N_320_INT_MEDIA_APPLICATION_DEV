@@ -8,8 +8,8 @@ h1 {
   <h1>Team Form</h1>
   <!-- Form -->
   <div>
-    <!-- <select-team @select-team="addTeamName"></select-team> -->
-    <select-team @select-team="$emit('select-team')"></select-team>
+    <select-team @select-team="addTeamName"></select-team>
+    <!-- <select-team @select-team="$emit('select-team')"></select-team> -->
   </div>
 </template>
 
@@ -19,8 +19,14 @@ export default {
   components: {
     SelectTeam
   },
-  props: ['addTeamName'],
-  emits: ['select-team', 'addTeamName'],
-  methods: {}
+  emits: ['select-team'],
+  methods: {
+    addTeamName(team) {
+      // Assign User input Value into "team"
+      this.userTeamName = team
+      console.log('New Team Name:', this.userTeamName)
+      this.$emit('select-team', this.userTeamName)
+    }
+  }
 }
 </script>
