@@ -7,10 +7,10 @@
     </div>
   </header>
 
+  <h1>Member Selection</h1>
+
   <!-- <RouterView /> -->
   <RouterView @select-team="addTeamName" :members="members" @team-data="addToTeam"></RouterView>
-
-  <h1>Member Selection</h1>
 
   <!-- Form -->
   <!-- <div>

@@ -11,7 +11,7 @@ h1 {
   <div>
     <!-- <team-data @addToTeam="addToTeam" @team-data="$emit('team-data')"></team-data> -->
     <team-data
-      @team-data="$emit('team-data')"
+      @team-data="$emit('addToTeam')"
       v-for="member in members"
       :key="member.name"
       :id="member.id"
@@ -21,6 +21,7 @@ h1 {
       :role="member.role"
       :team="member.team"
       :userTeamName="userTeamName"
+      @addToTeam="$emit('addToTeam')"
     ></team-data>
   </div>
 </template>
@@ -38,8 +39,12 @@ export default {
   //     members
   //   }
   // },
-  emits: ['team-data', 'addToTeam'],
+  emits: ['team-data', 'addToTeam', 'select-team'],
   props: ['members', 'id', 'name', 'phone', 'email', 'role', 'team', 'userTeamName'],
-  methods: {}
+  methods: {
+    addToTeam(value, teamName, idNum, mName, mPhone, mEmail, mRole) {
+      this.$emit('addToTeam', value, teamName, idNum, mName, mPhone, mEmail, mRole)
+    }
+  }
 }
 </script>

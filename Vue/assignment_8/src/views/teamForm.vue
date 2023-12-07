@@ -19,7 +19,8 @@ export default {
   components: {
     SelectTeam
   },
-  emits: ['select-team'],
+  emits: ['select-team', 'team-data', 'addTeamName'],
+  props: ['members'],
   methods: {
     addTeamName(team) {
       // Assign User input Value into "team"
