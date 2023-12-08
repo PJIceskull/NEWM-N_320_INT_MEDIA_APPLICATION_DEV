@@ -1,11 +1,28 @@
-<style scoped></style>
+<style>
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>
 
 <template>
+  <!-- Nav -->
+  <navHeader></navHeader>
+
   <h1>Final Project</h1>
+
+  <!-- View PAges -->
+  <RouterView></RouterView>
 </template>
 
 <script>
+import { RouterView } from 'vue-router'
+import navHeader from './components/navHeader.vue'
 export default {
+  components: {
+    navHeader,
+    RouterView
+  },
   data() {
     return {
       sessions: [
