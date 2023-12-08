@@ -84,7 +84,8 @@
     </div>
 
     <!-- More Details -->
-    <ul v-if="visibleData">
+    <!-- <ul v-if="visibleData"> -->
+    <ul>
       <!-- Phone -->
       <li><strong>Phone:</strong> {{ phone }}</li>
       <!-- Email -->
