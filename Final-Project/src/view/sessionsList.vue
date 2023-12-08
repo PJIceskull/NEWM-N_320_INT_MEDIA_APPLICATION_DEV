@@ -1,6 +1,7 @@
 <style scoped>
 h1 {
-  color: rgb(28, 28, 138);
+  /* color: rgb(28, 28, 138); */
+  color: rgb(244, 54, 54);
   font-weight: lighter;
 }
 </style>
