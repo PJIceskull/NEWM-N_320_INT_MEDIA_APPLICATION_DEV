@@ -27,6 +27,7 @@ h1 {
 
 <script>
 import TeamData from '../components/TeamData.vue'
+
 export default {
   components: {
     TeamData

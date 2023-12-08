@@ -1,4 +1,11 @@
-<style scoped></style>
+<style scoped>
+article {
+  border-radius: 25px;
+  box-shadow: 2px 7px 20px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  margin-top: 25px;
+}
+</style>
 
 <template>
   <header>
@@ -9,13 +16,15 @@
 
   <h1>Member Selection</h1>
 
-  <!-- <RouterView /> -->
-  <RouterView
-    @select-team="addTeamName"
-    :members="members"
-    :userTeamName="userTeamName"
-    @team-data="addToTeam"
-  ></RouterView>
+  <article>
+    <!-- <RouterView /> -->
+    <RouterView
+      @select-team="addTeamName"
+      :members="members"
+      :userTeamName="userTeamName"
+      @team-data="addToTeam"
+    ></RouterView>
+  </article>
 
   <!-- Form -->
   <!-- <div>
@@ -40,7 +49,7 @@
 </template>
 
 <script>
-import navHeader from './components/navHeader.vue'
+import navHeader from './components/navheader.vue'
 export default {
   components: {
     navHeader

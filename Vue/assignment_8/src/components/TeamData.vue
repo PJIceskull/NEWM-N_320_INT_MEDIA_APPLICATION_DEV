@@ -73,14 +73,14 @@
 
     <div>
       <!-- Show / Hide Detials -->
-      <a class="toggleDetails" @click="toggleDetails">
+      <!-- <a class="toggleDetails" @click="toggleDetails">
         {{
           // if visible data is true show "Show"
           // if Visible data is false show "Hide"
           visibleData ? 'Hide' : 'Show More'
         }}
         Details</a
-      >
+      > -->
     </div>
 
     <!-- More Details -->

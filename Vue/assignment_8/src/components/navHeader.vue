@@ -32,7 +32,7 @@ a:active {
 <template>
   <nav>
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/teams">About</RouterLink>
+    <RouterLink to="/teams">Teams</RouterLink>
   </nav>
 </template>
 
