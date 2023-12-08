@@ -10,14 +10,19 @@
   <h1>Member Selection</h1>
 
   <!-- <RouterView /> -->
-  <RouterView @select-team="addTeamName" :members="members" @team-data="addToTeam"></RouterView>
+  <RouterView
+    @select-team="addTeamName"
+    :members="members"
+    :userTeamName="userTeamName"
+    @team-data="addToTeam"
+  ></RouterView>
 
   <!-- Form -->
   <!-- <div>
     <select-team @select-team="addTeamName"></select-team>
   </div> -->
   <!-- Team Data -->
-  <div>
+  <!-- <div>
     <h2>Team Data</h2>
     <team-data
       v-for="member in members"
@@ -31,7 +36,7 @@
       :userTeamName="userTeamName"
       @addToTeam="addToTeam"
     ></team-data>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -171,9 +176,9 @@ export default {
       console.log('Add To Team: ', value)
       console.log(idNum)
 
-      console.log('Team Name: ', teamName)
+      // console.log('Team Name: ', teamName)
       teamName = value
-      console.log('Team Name: ', value)
+      // console.log('Team Name: ', value)
 
       console.log(this.members[idNum - 1].name)
       this.members[idNum - 1].team = value

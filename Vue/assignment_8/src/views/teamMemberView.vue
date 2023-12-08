@@ -9,9 +9,8 @@ h1 {
 
   <!-- Team Data -->
   <div>
-    <!-- <team-data @addToTeam="addToTeam" @team-data="$emit('team-data')"></team-data> -->
     <team-data
-      @team-data="$emit('addToTeam')"
+      @team-data="$emit('team-data')"
       v-for="member in members"
       :key="member.name"
       :id="member.id"
@@ -21,29 +20,24 @@ h1 {
       :role="member.role"
       :team="member.team"
       :userTeamName="userTeamName"
-      @addToTeam="$emit('addToTeam')"
+      @addToTeam="addToTeam"
     ></team-data>
   </div>
 </template>
 
 <script>
 import TeamData from '../components/TeamData.vue'
-// import members from '../App.vue'
 export default {
   components: {
     TeamData
-    // members
   },
-  // data() {
-  //   return {
-  //     members
-  //   }
-  // },
   emits: ['team-data', 'addToTeam', 'select-team'],
   props: ['members', 'id', 'name', 'phone', 'email', 'role', 'team', 'userTeamName'],
   methods: {
     addToTeam(value, teamName, idNum, mName, mPhone, mEmail, mRole) {
-      this.$emit('addToTeam', value, teamName, idNum, mName, mPhone, mEmail, mRole)
+      console.log(value)
+      teamName = value
+      this.$emit('team-data', value, teamName, idNum, mName, mPhone, mEmail, mRole)
     }
   }
 }

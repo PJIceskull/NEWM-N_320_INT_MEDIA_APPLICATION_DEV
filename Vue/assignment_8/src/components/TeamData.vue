@@ -110,7 +110,7 @@ export default {
       enteredTeamName: ''
     }
   },
-  props: ['id', 'name', 'phone', 'email', 'role', 'team', 'userTeamName'],
+  props: ['members', 'id', 'name', 'phone', 'email', 'role', 'team', 'userTeamName'],
   emit: ['team-data', 'addToTeam'],
   methods: {
     toggleDetails() {
@@ -119,6 +119,7 @@ export default {
       // If False set = to True / Not False
     },
     addToTeam(value, teamName, idNum, mName, mPhone, mEmail, mRole) {
+      console.log('Team Name: ', value)
       this.$emit('addToTeam', value, teamName, idNum, mName, mPhone, mEmail, mRole)
     }
   }
