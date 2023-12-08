@@ -2,6 +2,7 @@
 html,
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: snow;
 }
 </style>
 
@@ -9,10 +10,9 @@ body {
   <!-- Nav -->
   <navHeader></navHeader>
 
-  <h1>Final Project</h1>
+  <!-- <h1>Final Project</h1> -->
 
   <!-- View Pages -->
-  <!-- <RouterView :session="sessions" @session-data="$emit('session-data')"></RouterView> -->
   <RouterView :sessions="sessions"></RouterView>
 </template>
 
