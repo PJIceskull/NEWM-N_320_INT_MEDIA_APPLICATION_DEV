@@ -11,7 +11,7 @@ body {
 
   <h1>Final Project</h1>
 
-  <!-- View PAges -->
+  <!-- View Pages -->
   <RouterView></RouterView>
 </template>
 
