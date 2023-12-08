@@ -88,15 +88,15 @@ section button:active {
 <script>
 export default {
   emit: ['session-data'],
-  props: ['sessions', 'id', 'title', 'desc', 'presenter', 'tags', 'sTime', 'sDay']
-  //   props: {
-  //     id: Number,
-  //     title: String,
-  //     desc: String,
-  //     presenter: String,
-  //     tags: String,
-  //     sTime: Number,
-  //     sDay: String
-  //   }
+  //   props: ['sessions', 'id', 'title', 'desc', 'presenter', 'tags', 'sTime', 'sDay']
+  props: {
+    id: Number,
+    title: String,
+    desc: String,
+    presenter: String,
+    tags: Array,
+    sTime: Number,
+    sDay: String
+  }
 }
 </script>
