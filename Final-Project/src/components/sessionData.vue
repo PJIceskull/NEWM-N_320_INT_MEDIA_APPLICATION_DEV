@@ -5,6 +5,7 @@ section {
   box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.5);
   position: relative;
   margin-bottom: 30px;
+  background-color: snow;
 }
 section h2 {
   width: 85%;

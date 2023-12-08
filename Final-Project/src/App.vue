@@ -3,7 +3,8 @@
 html,
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: snow;
+  /* background-color: snow; */
+  background-color: beige;
 }
 </style>
 
