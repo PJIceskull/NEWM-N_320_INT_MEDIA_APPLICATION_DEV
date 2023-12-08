@@ -12,12 +12,14 @@ body {
   <h1>Final Project</h1>
 
   <!-- View Pages -->
-  <RouterView></RouterView>
+  <!-- <RouterView :session="sessions" @session-data="$emit('session-data')"></RouterView> -->
+  <RouterView :sessions="sessions"></RouterView>
 </template>
 
 <script>
 import { RouterView } from 'vue-router'
 import navHeader from './components/navHeader.vue'
+// import SessionData from './components/sessionData.vue'
 export default {
   components: {
     navHeader,
