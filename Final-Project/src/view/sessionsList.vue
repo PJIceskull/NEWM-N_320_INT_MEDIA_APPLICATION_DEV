@@ -9,12 +9,12 @@ h1 {
   <div>
     <h1>Session Information</h1>
 
-    <p>5 Sessions</p>
+    <p>{{ totalSession }} Sessions</p>
     <div>
       <session-data
         @session-data="$emit('session-data')"
         v-for="session in sessions"
-        :key="session.title"
+        :key="session.id"
         :id="session.id"
         :title="session.title"
         :desc="session.desc"
@@ -22,6 +22,7 @@ h1 {
         :tags="session.tags"
         :sTime="session.sTime"
         :sDay="session.sDay"
+        :added="session.added"
       ></session-data>
     </div>
   </div>
@@ -34,7 +35,9 @@ export default {
     // sessionData
   },
   data() {
-    return {}
+    return {
+      totalSession: this.sessions.length
+    }
   },
   emits: ['session-data'],
   props: ['sessions', 'id', 'title', 'desc', 'presenter', 'tags', 'sTime', 'sDay', 'added']

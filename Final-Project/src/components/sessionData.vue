@@ -96,7 +96,8 @@ export default {
     presenter: String,
     tags: Array,
     sTime: Number,
-    sDay: String
+    sDay: String,
+    added: Boolean
   }
 }
 </script>
