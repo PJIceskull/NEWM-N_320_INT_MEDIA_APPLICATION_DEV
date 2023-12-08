@@ -9,14 +9,11 @@ nav {
   padding: 5px 15px;
 }
 nav h1 {
-  /* color: rgb(28, 28, 138); */
   color: rgb(138, 28, 28);
-  /* color: hsl(348, 91%, 44%); */
 }
 nav a {
   color: #fff;
   text-decoration: none;
-  /* background-color: rgb(42, 81, 255); */
   background-color: tomato;
   border: 3px solid snow;
   padding: 12px 10px;
@@ -24,12 +21,10 @@ nav a {
   margin-right: 15px;
 }
 nav a:hover {
-  /* background-color: hsl(229, 100%, 29%); */
   background-color: hsl(9, 100%, 32%);
 }
 nav a:active {
   background-color: #fff;
-  /* color: hsl(229, 100%, 29%); */
   color: hsl(9, 100%, 32%);
 }
 </style>
