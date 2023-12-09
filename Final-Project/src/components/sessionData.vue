@@ -34,9 +34,15 @@ button {
   background-color: salmon;
   padding: 10px;
   border-radius: 15px;
+  cursor: pointer;
 }
 .tags {
   margin-right: 15px;
+}
+.tags:hover {
+  background-color: hsl(6, 93%, 40%);
+  transform: scale(1.15);
+  transition: 0.25s;
 }
 .tags p {
   margin: 0;
@@ -50,7 +56,6 @@ section button {
 section button:hover {
   background-color: hsl(6, 93%, 55%);
   /* color: #fffafa; */
-  cursor: pointer;
 }
 section button:active {
   background-color: snow;
@@ -68,6 +73,7 @@ section button:active {
         Presented by: <span>{{ presenter }}</span>
       </p>
       <p>{{ sDay }} by {{ sTime }}</p>
+      <!-- <p>{{ sDay }} by {{ timeFormat.toLocaleTimeString() }}</p> -->
     </div>
 
     <hr />
@@ -78,17 +84,24 @@ section button:active {
 
     <div class="categories">
       <label>Categories:</label>
-      <div class="tags" v-for="tag in tags">
-        {{ tag }}
+      <div class="tags" v-for="tag in tags" @click="filterByTags(tag)">
+        <p>{{ tag }}</p>
       </div>
     </div>
-    <button>Add Item</button>
+    <button @click="addSession(id, title, desc, presenter, tags, sTime, sDay, added)">
+      Add Item
+    </button>
   </section>
 </template>
 
 <script>
 export default {
-  emit: ['session-data'],
+  data() {
+    return {
+      // timeFormat: new Date()
+    }
+  },
+  emit: ['session-data', 'filterByTags', 'addSession'],
   //   props: ['sessions', 'id', 'title', 'desc', 'presenter', 'tags', 'sTime', 'sDay']
   props: {
     id: Number,
@@ -99,6 +112,26 @@ export default {
     sTime: Number,
     sDay: String,
     added: Boolean
+  },
+  methods: {
+    filterByTags(item) {
+      // console.log(item)
+      this.$emit('filterByTags', item)
+    },
+    addSession(idNum, u_title, u_desc, u_presenter, u_tags, u_sTime, u_sDay, u_added) {
+      // console.log({ idNum, u_title, u_desc, u_presenter, u_tags, u_sTime, u_sDay, u_added })
+      this.$emit(
+        'addSession',
+        idNum,
+        u_title,
+        u_desc,
+        u_presenter,
+        u_tags,
+        u_sTime,
+        u_sDay,
+        u_added
+      )
+    }
   }
 }
 </script>

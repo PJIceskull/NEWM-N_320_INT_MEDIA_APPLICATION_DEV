@@ -15,7 +15,12 @@ body {
   <!-- <h1>Final Project</h1> -->
 
   <!-- View Pages -->
-  <RouterView :sessions="sessions"></RouterView>
+  <RouterView
+    :sessions="sessions"
+    @session-data="filterByTags"
+    :userSessionsList="userSessionsList"
+    @addSession="addSession"
+  ></RouterView>
 </template>
 
 <script>
@@ -29,6 +34,9 @@ export default {
   },
   data() {
     return {
+      arrayLength: '',
+      itemVisibility: true,
+      sessionCount: 0,
       sessions: [
         {
           id: 1,
@@ -131,9 +139,40 @@ export default {
           sDay: 'Saturday',
           added: false
         }
-      ]
+      ],
+      userSessionsList: [] // Empty Array for User's Sessions
     }
   },
-  methods: {}
+  methods: {
+    // Filters
+    filterByTags(item) {
+      console.log(item)
+      this.sessions.filter(function (arr) {
+        arr.tags.forEach(function (index) {
+          if (index == item) {
+            console.log(arr.title)
+            console.log(arr)
+          }
+        })
+      })
+    },
+    addSession(idNum, u_title, u_desc, u_presenter, u_tags, u_sTime, u_sDay, u_added) {
+      const newSession = {
+        id: idNum,
+        title: u_title,
+        desc: u_desc,
+        presenter: u_presenter,
+        tags: u_tags,
+        sTime: u_sTime,
+        sDay: u_sDay,
+        added: u_added
+      }
+      // console.log(newSession)
+      // Push Session Object into userSessionsList
+      this.userSessionsList.push(newSession)
+      // console.log(this.userSessionsList)
+    }
+  },
+  computed: {}
 }
 </script>

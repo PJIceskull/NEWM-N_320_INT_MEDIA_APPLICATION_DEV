@@ -1,4 +1,4 @@
-<style scoped>
+<style>
 h1 {
   color: rgb(244, 54, 54);
   font-weight: lighter;
@@ -23,6 +23,8 @@ h1 {
         :sTime="session.sTime"
         :sDay="session.sDay"
         :added="session.added"
+        @filterByTags="filterByTags"
+        @addSession="addSession"
       ></session-data>
     </div>
   </div>
@@ -39,7 +41,26 @@ export default {
       totalSession: this.sessions.length
     }
   },
-  emits: ['session-data'],
-  props: ['sessions', 'id', 'title', 'desc', 'presenter', 'tags', 'sTime', 'sDay', 'added']
+  emits: ['session-data', 'filterByTags', 'addSession'],
+  props: ['sessions', 'id', 'title', 'desc', 'presenter', 'tags', 'sTime', 'sDay', 'added'],
+  methods: {
+    filterByTags(item) {
+      // console.log(item)
+      this.$emit('session-data', item)
+    },
+    addSession(idNum, u_title, u_desc, u_presenter, u_tags, u_sTime, u_sDay, u_added) {
+      this.$emit(
+        'addSession',
+        idNum,
+        u_title,
+        u_desc,
+        u_presenter,
+        u_tags,
+        u_sTime,
+        u_sDay,
+        u_added
+      )
+    }
+  }
 }
 </script>
