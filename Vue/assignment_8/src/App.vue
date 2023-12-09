@@ -22,6 +22,7 @@ article {
       @select-team="addTeamName"
       :members="members"
       :userTeamName="userTeamName"
+      :newTeamMember="newTeamMember"
       @team-data="addToTeam"
     ></RouterView>
   </article>
