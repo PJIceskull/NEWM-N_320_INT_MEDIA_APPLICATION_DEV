@@ -2,6 +2,12 @@
 
 Pierce Issah
 
+## Link to Project
+
+<!-- Firebase Link -->
+
+[Live Website](https://team-selection-d6dde.web.app/)
+
 ## About Project
 
 This project will:
