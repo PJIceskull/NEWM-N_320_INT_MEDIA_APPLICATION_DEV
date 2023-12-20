@@ -68,6 +68,8 @@ export default {
     submitData() {
       //
       console.log('User Input: ', this.userTeamName)
+      // Send alert to the user
+      alert('Team: ' + this.userTeamName + ' has been created.')
       // Emits
       this.$emit('select-team', this.userTeamName)
     }
